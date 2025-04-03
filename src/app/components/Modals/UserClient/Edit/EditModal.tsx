@@ -12,12 +12,12 @@ interface User {
 
 const EditModal = ({ data, setClose }: { data: User | null, setClose: React.Dispatch<React.SetStateAction<User | null>> }) => {
 
-    if (!data) return null;
-
-    const [newUsername, setNewUsername] = React.useState(data.username);
-    const [newEmail, setNewEmail] = React.useState(data.email);
+    const [newUsername, setNewUsername] = React.useState(data?.username || '');
+    const [newEmail, setNewEmail] = React.useState(data?.email || '');
     const [newPassword, setNewPassword] = React.useState('');
-    const [newType, setNewType] = React.useState<"admin" | "user">(data.type);
+    const [newType, setNewType] = React.useState<"admin" | "user">(data?.type || 'user');
+
+    if (!data) return null;
 
     const editUser = async () => {
 

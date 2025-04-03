@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import Bad from '@app/(pages)/login/components/alert/bad'
+import Bad from '@/app/(pages)/components/alert/bad'
 
 interface Props {
     message: string

@@ -136,10 +136,14 @@ export const POST = async (req: Request) => {
         });
 
         if (!user) {
+            console.log("User not found");
+            console.log(data.email);
             return Response.json({ message: "Invalid email or password" }, { status: 400 });
         }
 
         if (!await verify(user.password, data.password)) {
+            console.log("Invalid password");
+            console.log(data.password);
             return Response.json({ message: "Invalid email or password" }, { status: 400 });
         }
 

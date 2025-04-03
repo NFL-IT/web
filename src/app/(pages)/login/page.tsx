@@ -2,9 +2,9 @@
 
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import Label from '@app/(pages)/login/components/Label'
-import Input from '@app/(pages)/login/components/Input'
-import Alert from '@app/(pages)/login/components/Alert'
+import Label from '@/app/(pages)/components/Label'
+import Input from '@/app/(pages)/components/Input'
+import Alert from '@/app/(pages)/components/Alert'
 import { useRouter } from 'next/navigation'
 
 interface FormData {

@@ -3,7 +3,7 @@
 import React from 'react'
 
 interface Props {
-    type: "email" | "password",
+    type: "email" | "password" | "text",
     placeholder: string
     args?: any
 }

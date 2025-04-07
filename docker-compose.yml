@@ -15,8 +15,6 @@ services:
     expose:
       - 80
       - 443
-    networks:
-      - gitlab
     volumes:
       - ./gitlab-config:/etc/gitlab
       - ./gitlab-logs:/var/log/gitlab

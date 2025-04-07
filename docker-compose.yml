@@ -49,6 +49,16 @@ services:
 
 volumes:
   database:
+    driver: local
+
+  gitlab-config:
+    driver: local
+
+  gitlab-logs:
+    driver: local
+
+  gitlab-data:
+    driver: local
 
 networks:
   default:

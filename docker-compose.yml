@@ -1,20 +1,23 @@
 services:
   gitlab:
     image: gitlab/gitlab-ce:nightly
-    restart: always
     container_name: gitlab
+    restart: always
+    hostname: gitlab
     ports:
       - "80:80"
       - "443:443"
       - "22:22"
+    expose:
+      - 80
+      - 443
+      - 22
+    networks:
+      - gitlab
     volumes:
       - gitlab-config:/etc/gitlab
       - gitlab-logs:/var/log/gitlab
       - gitlab-data:/var/opt/gitlab
-    environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        gitlab_rails['gitlab_shell_ssh_port'] = 22
-        external_url 'http://localhost'
   db:
     image: postgres:17.4-alpine
     container_name: db
@@ -62,4 +65,7 @@ volumes:
 
 networks:
   default:
+    driver: bridge
+
+  gitlab:
     driver: bridge
